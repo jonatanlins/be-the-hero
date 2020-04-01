@@ -49,7 +49,7 @@ module.exports = {
       .first();
 
     if (incident.ong_id !== ong_id) {
-      return response.status(401).json({ error: "Operation not allowed" });
+      return response.status(401).send({ error: "Operation not allowed" });
     }
 
     await db("incidents")
